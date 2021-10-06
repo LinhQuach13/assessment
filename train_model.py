@@ -6,7 +6,7 @@ from scipy import stats
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomFores3tClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
@@ -16,6 +16,91 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
+#cms_library python library
+from cms_procedures import get_procedure_attributes, get_procedure_success
+
+
+
+
+
+###### ACQUIRE DATA ########
+
+#dictionary of attributes from cms_procedures library
+a_dict= get_procedure_attribute(procedure_id= None)
+
+def get_attribute(a_dict):
+    '''
+    This function takes in the attribute dictionary iterates through keys that are 0-500. Each new key/value pair is appended to empty dictionary
+    and returns a new dictionary with all the key/values pairs within the range given.
+    '''
+    # initializing range 
+    i, j = 0, 500
+    # using loop to iterate through all keys
+    res = dict()
+    for key, val in a_dict.items():
+        if int(key) >= i and int(key) <= j:
+            res[key] = val
+            return res
+        
+        
+#dictionary of procedures from cms_procedures library       
+procedure_dict= get_procedure_success(procedure_id)
+
+def get_procedure(procedure_dict):
+    '''
+    This function takes in the procedure dictionary iterates through keys that are 0-500. Each new key/value pair is appended to empty dictionary
+    and returns a new dictionary with all the key/values pairs within the range given.
+    '''
+    # initializing range 
+    i, j = 0, 500
+    # using loop to iterate through all keys
+    proc = dict()
+    for key, val in procedure_dict.items():
+        if int(key) >= i and int(key) <= j:
+            proc[key] = val
+            return proc
+        
+
+
+def merge_two_dicts(x, y):
+    """Given two dictionaries, merge them into a new dict as a copy."""
+    z = x.copy()
+    z.update(y)
+    return z
+
+
+
+def convert_to_df(dict_name):
+    '''
+    This function takes in a dictionary and converts it to a dataframe.
+    '''
+    #Specify orient='index' to create the DataFrame using dictionary keys as rows:
+    df= pd.DataFrame.from_dict(dict_name, orient='index')
+    return df
+
+
+####### PREPARE ########
+
+def drop_duplicates(df):
+    '''
+    This function drops duplicates by unique identifier procedure_id
+    '''
+    df= df.drop_duplicates(subset = ['procedure_id'], inplace= True)
+    return df
+
+
+def drop_nulls(df):
+    """
+    This function drop all rows with NaNs in procedure_id 
+    """
+    df= df.dropna(subset=['procedure_id'])
+    return df
+    
+
+
+
+    
+######## Modeling ##########
 def train_validate_test_split(df, target, seed=123):
     '''
     This function takes in a dataframe, the name of the target variable

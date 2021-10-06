@@ -1,7 +1,7 @@
 # Technical Assessment
 
 ## Choosing the model:
-This is a binary classification because it has two class labels (success or failure of hospitals).
+This is a binary classification because it has two class labels (success or failure of hospital procedures).
 - The classification algorithm used was a Random Forest Model for several reasons listed below: 
      - It is a robust model that is able to handle outliers and data that is not normally distributed.
      - This model is works well with a wide variety of data.

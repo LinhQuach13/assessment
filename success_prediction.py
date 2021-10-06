@@ -19,9 +19,9 @@ import seaborn as sns
 
 
 
-def model_success(X_train, y_train, n_est= 100, c= 'gini', max_dp= None, mss= 2, msl= 1, min_weight_fraction_lf= 0.0, max_ft= 'auto', max_leaf_nd= None, min_impurity_dc= 0.0, min_impurity_splt= None, bootstrp= True, oob_score= False, n_jb= None, random_st= None, verbo= 0, warm_st= False, cw= None, ccpAlpha= 0.0, maxSamples= None, ftOne, ftTwo, ftThree):
+def model_success(X_train, y_train, ftOne, ftTwo, ftThree, n_est= 100, c= 'gini', max_dp= None, mss= 2, msl= 1, min_weight_fraction_lf= 0.0, max_ft= 'auto', max_leaf_nd= None, min_impurity_dc= 0.0, min_impurity_splt= None, bootstrp= True, oob_score= False, n_jb= None, random_st= None, verbo= 0, warm_st= False, cw= None, ccpAlpha= 0.0, maxSamples= None):
     '''
-    This function takes in the X_train, y_train subsets,the parameters as listed below for the Random Forest Model, and 3 attributes
+    This function takes in the X_train, y_train subsets, 3 attributes, the parameters as listed below for the Random Forest Model,
     then runs it through the Random Forest model object. The predictions (True/False) are outputted here.
     Parameters:
 - n_est: int, default=100

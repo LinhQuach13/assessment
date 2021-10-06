@@ -60,22 +60,22 @@ def get_procedure(procedure_dict):
         
 
 
-def merge_two_dicts(x, y):
+def merge_two_dicts(res, proc):
     '''
     Given two dictionaries, merge them into a new dict as a copy.
     '''
-    z = x.copy()
-    z.update(y)
+    z = res.copy()
+    z.update(proc)
     return z
 
 
 
-def convert_to_df(dict_name):
+def convert_to_df(z):
     '''
     This function takes in a dictionary and converts it to a dataframe.
     '''
     #Specify orient='index' to create the DataFrame using dictionary keys as rows:
-    df= pd.DataFrame.from_dict(dict_name, orient='index')
+    df= pd.DataFrame.from_dict(z, orient='index')
     return df
 
 

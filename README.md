@@ -29,6 +29,7 @@ This is a binary classification because it is a classification with two possible
 
 ## How would the code run:
 - Ideally with more time I would have made the .py files as scripts that could be run by calling only the name of the script. As it is right now you can run the functions from each .py file by importing the file (i.e. import train_model) and then calling the the specific function you want to use (i.e. train_model.get_attribute(a_dict)).
-- With additional time I would have provided a function that polls the data to confirm whether or not the assumptions made in choosing the model type were True.
+- Each .py file would have to be used separately as it is now but with additional time the files would have been created to work together such as making the success_prediction.py file obtain model_split function from the train_model.py. This would made for a more automated process.
+- With additional time a function would have been provided that polls the data to confirm whether or not the assumptions made in choosing the model type were True. 
 
     

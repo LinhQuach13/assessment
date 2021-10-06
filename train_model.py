@@ -104,6 +104,7 @@ def drop_nulls(df):
 
     
 ######## Modeling ##########
+
 def train_validate_test_split(df, target, seed=123):
     '''
     This function takes in a dataframe, the name of the target variable

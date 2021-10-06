@@ -2,7 +2,7 @@
 
 
 # Assumptions for acquire:
-- Assumed procedure_id is auto-incremented (numeric): created two functions one to obtain dictionary of attributes with keys who ranged from 0 to 500, a second function to obtain dictionary of procedures with keys who ranged from 0 to 500.
+- Assumed procedure_id is auto-incremented (numeric): created two functions one to obtain dictionary of attributes with keys that ranged from 0 to 500, a second function to obtain dictionary of procedures with keys that ranged from 0 to 500.
 - After combining the dictionary of attributes and dictionary of procedures together they were converted to a dataframe. This will make prepping and modeling the data easier.
 
 # Assumptions for preparation:

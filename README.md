@@ -10,7 +10,7 @@
 - Will assume the only possible nulls are in procedure_id column.
 - It is assumed there are likely to be duplicates after acquiring all of the necessary data.
 - Created a function named drop_duplicates to remove any duplicate data by its unique identifier procedure_id.
-- Created a function to drop nulls in procedure_id. It will be necessary to drop any null values that are in procedure_id because this step is needed to be able to feed the data into the model and this column is our target thus there must be values in it.
+- Created a function to drop nulls in procedure_id. It will be necessary to drop any null values that are in procedure_id because this step is needed to be able to feed the data into the model.
 
 
 # Choosing the model:

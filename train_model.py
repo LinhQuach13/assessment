@@ -6,7 +6,7 @@ from scipy import stats
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomFores3tClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
@@ -25,14 +25,12 @@ from cms_procedures import get_procedure_attributes, get_procedure_success
 
 ###### ACQUIRE DATA ########
 
-#dictionary of attributes from cms_procedures library
-a_dict= get_procedure_attribute(procedure_id= None)
-
 def get_attribute(a_dict):
     '''
-    This function takes in the attribute dictionary iterates through keys that are 0-500. Each new key/value pair is appended to empty dictionary
-    and returns a new dictionary with all the key/values pairs within the range given.
+    This function takes in the attribute dictionary iterates through keys that are 0-500. Each new key/value pair is appended to empty dictionary and returns a new dictionary with all the key/values pairs within the range given.
     '''
+    #dictionary of attributes from cms_procedures library
+    a_dict= get_procedure_attributes(procedure_id= None)
     # initializing range 
     i, j = 0, 500
     # using loop to iterate through all keys
@@ -43,14 +41,14 @@ def get_attribute(a_dict):
             return res
         
         
-#dictionary of procedures from cms_procedures library       
-procedure_dict= get_procedure_success(procedure_id)
 
 def get_procedure(procedure_dict):
     '''
     This function takes in the procedure dictionary iterates through keys that are 0-500. Each new key/value pair is appended to empty dictionary
     and returns a new dictionary with all the key/values pairs within the range given.
     '''
+    #dictionary of procedures from cms_procedures library       
+    procedure_dict= get_procedure_success(procedure_id)
     # initializing range 
     i, j = 0, 500
     # using loop to iterate through all keys
@@ -63,7 +61,9 @@ def get_procedure(procedure_dict):
 
 
 def merge_two_dicts(x, y):
-    """Given two dictionaries, merge them into a new dict as a copy."""
+    '''
+    Given two dictionaries, merge them into a new dict as a copy.
+    '''
     z = x.copy()
     z.update(y)
     return z

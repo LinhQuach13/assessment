@@ -1,7 +1,18 @@
 # Technical Assessment
 
-## Choosing the model:
-This is a binary classification because it has two class labels (success or failure of hospital procedures).
+
+# Assumptions for acquire:
+- Assumed procedure_id is auto incremented: created two functions one to obtain dictionary of attributes with keys who ranged from 0 to 1000, a second function to obtain dictionary of procedures with keys who ranged from 0 to 1000.
+- After combining the dictionary of attributes and dictionary of procedures together they were converted to a dataframe. This will make exploration and modeling the data easier.
+
+# Assumptions for preparation:
+- Due to time constraints will assume there are not null values in the fixed set of attributes.
+- Will assume the only possible nulls are in procedure_id column.
+- Created a function to drop nulls in procedure_id column. It will be necessary to drop any null values that are in the procedure_id column because this step is necessary to be able to feed the data into the model and this column is our target thus there must be values in it.
+
+
+# Choosing the model:
+This is a binary classification because it is a classification with two possible outcomes (success or failure of hospital procedures).
 - The classification algorithm used was a Random Forest Model for several reasons listed below: 
      - It is a robust model that is able to handle outliers and data that is not normally distributed.
      - This model is works well with a wide variety of data.

@@ -32,7 +32,7 @@ def get_attribute(a_dict):
     #dictionary of attributes from cms_procedures library
     a_dict= get_procedure_attributes(procedure_id= None)
     # initializing range 
-    i, j = 0, 500
+    i, j = 0, 501
     # using loop to iterate through all keys
     res = dict()
     for key, val in a_dict.items():
@@ -50,7 +50,7 @@ def get_procedure(procedure_dict):
     #dictionary of procedures from cms_procedures library       
     procedure_dict= get_procedure_success(procedure_id)
     # initializing range 
-    i, j = 0, 500
+    i, j = 0, 501
     # using loop to iterate through all keys
     proc = dict()
     for key, val in procedure_dict.items():

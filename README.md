@@ -18,4 +18,11 @@ This is a binary classification because it is a classification with two possible
      - This model is works well with a wide variety of data.
      - Other models such as the logistic regression model are not as versatile to a variety of datasets because it assumes linear relationships which may not be the case for this dataset.
      - This Random Forest model has a reduction in over-fitting compare to the Decision Tree model.
+
+
+# Files:
+- train_model.py: This .py file contains functions for acquire, prepare, and training the model.
+- success_prediction.py: This .py file contains a function that returns a prediction of success (True or False).
+
+
     
